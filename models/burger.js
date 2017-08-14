@@ -1,0 +1,25 @@
+var orm = require("../config/orm.js");
+
+var burger = {
+  selectAll: function(table, cb) {
+    orm.selectAll("burgers", function(res) {
+      cb(res);
+    });
+  },
+
+  insertOne: function(table, cols, vals, cb) {
+    orm.insertOne("burgers", cols, vals, function(res) {
+      cb(res);
+    });
+  },
+
+  updateOne: function() {
+    orm.updateOne("burgers",  function(res) {
+      cb(res);
+    });
+  }
+};
+
+
+
+module.exports = burger;
